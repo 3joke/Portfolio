@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Login - Martin.Dev</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="clock-bar"><div><span id="liveDate"></span> | <span id="liveClock"></span></div><div>Secure Login • Chuka, KE • <span id="lastUpdated"></span></div></div>
+<div class="login-wrap">
+<div class="login-card">
+<div style="text-align:center;margin-bottom:18px"><div style="font-weight:800;font-size:1.4rem">MARTIN<span style="color:#2563eb">.DEV</span></div><div style="color:#64748b;font-size:0.85rem">Professional Login • <span id="liveDate"></span></div><div style="margin-top:8px;background:#f8fafc;border:1px solid #e2e8f0;padding:8px;border-radius:10px;font-size:0.85rem"><span id="liveClock"></span> EAT • Auto updates</div></div>
+<form onsubmit="login(event)">
+<label style="font-weight:600;font-size:0.9rem">Username</label>
+<input id="username" class="input" placeholder="admin or martin" required>
+<label style="font-weight:600;font-size:0.9rem">Password</label>
+<input id="password" type="password" class="input" placeholder="0794745885" required>
+<div id="loginError" class="error" style="display:none;background:#fef2f2;border:1px solid #fecaca;padding:10px;border-radius:10px"></div>
+<button type="submit" class="btn btn-primary" style="width:100%;margin-top:10px">Login → Dashboard</button>
+</form>
+<div style="margin-top:18px;padding:12px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;font-size:0.82rem;color:#1e40af">
+<b>Demo Credentials (Professional):</b><br>
+Username: <b>admin</b> / Password: <b>0794745885</b><br>
+Username: <b>martin</b> / Password: <b>0700549487</b><br><br>
+<span style="color:#64748b">Time now: <span id="liveClock"></span> • <span id="liveDate"></span></span>
+</div>
+<div style="text-align:center;margin-top:16px"><a href="index.html" style="color:#64748b;font-size:0.85rem;text-decoration:none">← Back to Portfolio • © <span id="autoYear"></span></a></div>
+</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dashboard - Martin.Dev</title><link rel="stylesheet" href="style.css"></head>
+<body onload="checkAuth()">
+<div class="clock-bar"><div><span id="liveDate"></span> | <span id="liveClock"></span> | Logged as Admin</div><div><span id="lastUpdated"></span> <a onclick="logout()" style="margin-left:12px;background:#ef4444;color:white;padding:6px 12px;border-radius:8px;cursor:pointer;text-decoration:none">Logout</a></div></div>
+<nav style="top:38px"><div class="logo">DASHBOARD • <span id="liveClock"></span></div><div class="links"><a href="index.html">View Site</a><a onclick="logout()" style="cursor:pointer;color:#ef4444">Logout</a></div></nav>
+<div class="container">
+<h2 class="section-title">Welcome Martin - <span id="liveDate"></span></h2><p class="section-sub">Auto clock • Last login: <span id="lastUpdated"></span> • Year <span id="autoYear"></span></p>
+<div class="grid3">
+<div class="card"><h3>🕒 Live Clock</h3><br><div style="font-size:2rem;font-weight:800;color:#2563eb" id="liveClock"></div><div style="color:#64748b" id="liveDate"></div><br><div style="background:#f8fafc;padding:10px;border-radius:10px;font-size:0.85rem">Nairobi EAT • Auto updates every second<br>Updated: <span id="lastUpdated"></span></div></div>
+<div class="card"><h3>📊 Stats</h3><br><p style="line-height:2">📞 0794745885 - Primary<br>📞 0700549487 - Secondary<br>✉️ bitdu564@gmail.com<br>💼 50+ Projects<br>© <span id="autoYear"></span> All auto</p></div>
+<div class="card"><h3>⚡ Quick Actions</h3><br><a href="index.html#projects" class="btn btn-primary" style="width:100%;text-align:center">View Portfolio</a><a href="https://wa.me/254794745885" class="btn btn-ghost" style="width:100%;text-align:center">WhatsApp 0794745885</a><br><br><div style="font-size:0.8rem;color:#64748b">Current session: <span id="liveClock"></span><br>Auto date: <span id="liveDate"></span></div></div>
+</div>
+<div class="card" style="margin-top:22px"><h3>Professional Notes - Auto Timestamp</h3><br><textarea id="notes" style="width:100%;min-height:120px;padding:12px;border:1px solid #e2e8f0;border-radius:12px" placeholder="Write notes... Auto saved with timestamp..."></textarea><br><button class="btn btn-primary" onclick="localStorage.setItem('martin_notes',document.getElementById('notes').value);localStorage.setItem('notes_time',new Date().toLocaleString());alert('Saved at '+new Date().toLocaleString())">Save with Time - <span id="liveClock"></span></button><div style="color:#64748b;font-size:0.8rem;margin-top:8px">Last saved: <span id="notesTime"></span></div></div>
+</div>
+<script src="script.js"></script>
+<script>
+document.getElementById('notes').value=localStorage.getItem('martin_notes')||'';
+document.getElementById('notesTime').textContent=localStorage.getItem('notes_time')||'Never';
+setInterval(()=>{document.getElementById('notesTime').textContent=localStorage.getItem('notes_time')||'Never'},1000);
+</script>
+</body>
+</html>
